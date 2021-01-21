@@ -19,7 +19,7 @@ body{
     box-sizing: border-box;
     margin: 0;
 }
-p{
+span.accordion-item{
     font-size: 12px;
     line-height: 16px;
     color: var(--darkgrayishblue);
@@ -61,7 +61,8 @@ h1{
     margin-bottom: 1.3rem;
     color: var(--verydarkBlue-color);
 }
-h5{
+
+span.heading{
     font-size: 14px;
     font-weight: 400;
     color: var(--verydarkgrayishblue);
@@ -79,7 +80,7 @@ h5{
     display: none;
 }
 
-.accordion-container h5:hover{
+.accordion-container span.heading:hover{
     color: var(--softRed-color);
  }
 
@@ -90,24 +91,27 @@ h5{
      position: absolute;
  }
 
-input:checked + span h5{
+input:checked + span span.heading{
     font-weight: bold;
 }
-input:checked + span p{
+input:checked + span span.accordion-item{
     display: block;
 }
-h5{
+span.heading{
     display: flex;
     justify-content: space-between;
 }
-span.accordion-content h5::after{
+span.accordion-content span.heading::after{
     content: url("./images/icon-arrow-down.svg");
     padding: 0 0.5rem;
 }
-input:checked + span h5::after{
+input:checked + span span.heading::after{
     transform: rotate(-180deg);
     transition: ease-in 0.2s;
 }
+
+
+
 
 @media screen and (max-width:768px){
     .card{
