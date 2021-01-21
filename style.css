@@ -1,0 +1,142 @@
+
+:root{
+    --verydarkBlue-color: hsl(238, 29%, 16%);
+    --softRed-color: hsl(14, 88%, 65%);
+    --verydarkgrayishblue: hsl(237, 12%, 33%);
+    --darkgrayishblue: hsl(240, 6%, 50%);
+}
+
+body{
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%),hsl(240, 73%, 65%)) no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+p{
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--darkgrayishblue);
+}
+
+.card{
+    min-height: 510px;
+    max-width: 920px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2rem;
+    position: relative;
+    margin-left: 40px;
+}
+.section{
+    display: flex;
+    min-height: 510px;
+    max-width: 920px;
+    width: 100%;
+}
+
+.image-section{
+    width: 45%;
+    background: url("./images/illustration-woman-online-desktop.svg") right no-repeat;
+}
+
+.text-section{
+    padding: 4.5rem 6.2rem 4.5rem 5.4rem;
+    width: 60%;
+}
+
+.card img.box-img{
+    position: absolute;
+    top: 40%;
+    left: -10%;
+}
+
+h1{
+    margin-bottom: 1.3rem;
+    color: var(--verydarkBlue-color);
+}
+h5{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--verydarkgrayishblue);
+}
+
+.accordion-container{
+    padding:1.1rem 0 1rem;
+    border-bottom: 1px solid hsl(240, 44%, 90%);
+}
+
+.accordion-item{
+    margin-top: 1rem;
+    display: none;
+}
+
+.accordion-container{
+    cursor: pointer;
+}
+
+.accordion-container:active h5{
+    color: var(--softRed-color);
+ }
+
+.accordion-button{
+     visibility: hidden;
+     height: 0;
+     width: 0;
+     position: absolute;
+ }
+
+input:checked + span h5{
+    font-weight: bold;
+}
+input:checked + span p{
+    display: block;
+}
+h5{
+    display: flex;
+    justify-content: space-between;
+}
+span.accordion-content h5::after{
+    content: url("./images/icon-arrow-down.svg");
+    padding: 0 0.5rem;
+}
+input:checked + span h5::after{
+    transform: rotate(-180deg);
+    transition: ease-in 0.2s;
+}
+
+@media screen and (max-width:768px){
+    .card{
+        margin: 125px 2rem 0;
+    }
+    .section{
+        display: block;
+        position: relative;
+    }
+    .image-section{
+        min-height: 225px;
+        position: absolute;
+        top: -111px;
+        width: 100%;
+        background: url("./images/illustration-woman-online-mobile.svg") no-repeat;
+        z-index: 10;
+    }
+    .box-img{
+        display: none;
+    }
+    
+    .text-section{
+        padding: 125px 1.5rem 2rem;
+        width: 100%;
+    }  
+    .text-section h1{
+        text-align: center;
+    }
+
+}
