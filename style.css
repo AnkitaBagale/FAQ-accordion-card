@@ -81,7 +81,7 @@ h5{
     cursor: pointer;
 }
 
-.accordion-container:active h5{
+.accordion-container:hover h5{
     color: var(--softRed-color);
  }
 
