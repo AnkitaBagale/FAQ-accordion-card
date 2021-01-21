@@ -68,8 +68,10 @@ h5{
 }
 
 .accordion-container{
+    display: block;
     padding:1.1rem 0 1rem;
     border-bottom: 1px solid hsl(240, 44%, 90%);
+    cursor: pointer;
 }
 
 .accordion-item{
@@ -77,11 +79,7 @@ h5{
     display: none;
 }
 
-.accordion-container{
-    cursor: pointer;
-}
-
-.accordion-container:hover h5{
+.accordion-container h5:hover{
     color: var(--softRed-color);
  }
 
